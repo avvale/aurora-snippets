@@ -1,0 +1,30 @@
+{
+    "name": "aurora-snippets",
+    "publisher": "carlospalacin",
+    "displayName": "Aurora snippets",
+    "description": "Snippets for aurora framework",
+    "version": "0.0.1",
+    "icon": "images/icon.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/techedge-group/aurora-snippets.git"
+      },
+    "engines": {
+        "vscode": "^1.73.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "typescript",
+                "path": "./snippets/typescript.code-snippets"
+            },
+            {
+                "language": "html",
+                "path": "./snippets/html.code-snippets"
+            }
+        ]
+    }
+}

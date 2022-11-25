@@ -1,0 +1,51 @@
+{
+    // ${1:objectCamelCasePlural}
+    // ${2:objectCamelCaseSingular}
+    // ${3:objectPascalCaseSingular}
+    // ${4:boundedContextCamelCaseSingular}
+    // ${5:boundedContextPascalCaseSingular}
+    // ${6:moduleCamelCaseSingular}
+    "Add grid elements manager variables": {
+		"prefix": "au-grid-elements-manager-variables",
+		"body": [
+            "/* #region variables to manage grid-elements-manager ${1:objectCamelCasePlural} */",
+			"@ViewChild('${1:objectCamelCasePlural}GridElementsManager') ${1:objectCamelCasePlural}Component: GridElementsManagerComponent;",
+			"${2:objectCamelCaseSingular}DialogFg: FormGroup;",
+            "${1}GridId: string = '${4:boundedContextCamelCaseSingular}::${6:moduleCamelCaseSingular}.detail.${1}GridList';",
+            "${1}GridData$: Observable<GridData<${5:boundedContextPascalCaseSingular}${3:objectPascalCaseSingular}>>;",
+            "${1}GridState: GridState = {};",
+            "${1}ColumnsConfig$: Observable<ColumnConfig[]>;",
+            "originLoadOrdersColumnsConfig: ColumnConfig[] = [",
+            "\t{",
+            "\t\ttype   : ColumnDataType.ACTIONS,",
+            "\t\tfield  : 'Actions',",
+            "\t\tsticky : true,",
+            "\t\tactions: row =>",
+            "\t\t{",
+            "\t\t\tconst actions = [];",
+            "",
+            "\t\t\tactions.push({",
+            "\t\t\t\tid          : '${4:boundedContextCamelCaseSingular}::${6:moduleCamelCaseSingular}.detail.edit${3:objectPascalCaseSingular}',",
+            "\t\t\t\tisViewAction: false,",
+            "\t\t\t\ttranslation : 'edit',",
+            "\t\t\t\ticon        : 'mode_edit',",
+            "\t\t\t});",
+            "",
+            "\t\t\tactions.push({",
+            "\t\t\t\tid          : '${4:boundedContextCamelCaseSingular}::${6:moduleCamelCaseSingular}.detail.delete${3:objectPascalCaseSingular}',",
+            "\t\t\t\tisViewAction: false,",
+            "\t\t\t\ttranslation : 'delete',",
+            "\t\t\t\ticon        : 'delete',",
+            "\t\t\t});",
+            "",
+            "\t\t\treturn actions;",
+            "\t\t},",
+            "\t},",
+            "\t...${2:objectCamelCaseSingular}ColumnsConfig,",
+            "];",
+            "/* #endregion variables to manage grid-elements-manager ${1:objectCamelCasePlural} */",
+            "$7"
+		],
+		"description": "Create variables for grid elements manager"
+	},
+}
