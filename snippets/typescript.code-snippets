@@ -211,7 +211,7 @@
             "\t\t\tdismissible: true,",
             "\t\t});",
             "",
-            "\tdeleteTruckDepotDialogRef",
+            "\tdelete${4:objectPascalCaseSingular}DialogRef",
             "\t\t.afterClosed()",
             "\t\t.subscribe(async result =>",
             "\t\t{",
@@ -265,4 +265,62 @@
 		],
 		"description": "Create variables for grid elements manager"
 	},
+
+    // ${1:objectCamelCaseSingular}
+    // ${2:objectPascalCasePlural}
+    // ${3:objectPascalCaseSingular}
+    // ${4:boundedContextCamelCaseSingular}
+    // ${5:boundedContextPascalCaseSingular}
+    // ${6:moduleCamelCaseSingular}
+    // ${7:modulePascalCaseSingular}
+    "Add grid elements manager service": {
+		"prefix": "au-find-by-id-with-relations-service-method",
+		"body": [
+            "findByIdWithRelations(",
+            "\t{",
+            "\t\tgraphqlStatement = findByIdWithRelationsQuery,",
+            "\t\tid = '',",
+            "\t\tconstraint = {},",
+            "\t\tqueryPaginate${2:objectPascalCasePlural} = {},",
+            "\t\tconstraintPaginate${2:objectPascalCasePlural} = {},",
+            "\t}: {",
+            "\t\tgraphqlStatement?: DocumentNode;",
+            "\t\tid?: string;",
+            "\t\tconstraint?: QueryStatement;",
+            "\t\tqueryPaginate${2:objectPascalCasePlural}?: QueryStatement;",
+            "\t\tconstraintPaginate${2:objectPascalCasePlural}?: QueryStatement;",
+            "\t} = {},",
+            "): Observable<{",
+            "\tobject: ${5:boundedContextPascalCaseSingular}${7:modulePascalCaseSingular};",
+            "\t${4:boundedContextCamelCaseSingular}Paginate${2:objectPascalCasePlural}: GridData<${5:boundedContextPascalCaseSingular}${3:objectPascalCaseSingular}>;",
+            "}>",
+            "{",
+            "\treturn this.graphqlService",
+            "\t\t.client()",
+            "\t\t.watchQuery<{",
+            "\t\t\tobject: ${5:boundedContextPascalCaseSingular}${7:modulePascalCaseSingular};",
+            "\t\t\t${4:boundedContextCamelCaseSingular}Paginate${2:objectPascalCasePlural}: GridData<${5:boundedContextPascalCaseSingular}${3:objectPascalCaseSingular}>;",
+            "\t\t}>({",
+            "\t\t\tquery    : parseGqlFields(graphqlStatement, fields, constraint),",
+            "\t\t\tvariables: {",
+            "\t\t\t\tid,",
+            "\t\t\t\tconstraint,",
+            "\t\t\t\tqueryPaginate${2:objectPascalCasePlural},",
+            "\t\t\t\tconstraintPaginate${2:objectPascalCasePlural},",
+            "\t\t\t},",
+            "\t\t})",
+            "\t\t.valueChanges",
+            "\t\t.pipe(",
+            "\t\t\tfirst(),",
+            "\t\t\tmap(result => result.data),",
+            "\t\t\ttap(data =>",
+            "\t\t\t{",
+            "\t\t\t\tthis.${6:moduleCamelCaseSingular}Subject$.next(data.object);",
+            "\t\t\t\tthis.${1:objectCamelCaseSingular}Service.paginationSubject$.next(data.${4:boundedContextCamelCaseSingular}Paginate${2:objectPascalCasePlural});",
+            "\t\t\t}),",
+            "\t\t);",
+            "}",
+		],
+		"description": "Create findByIdWithRelations method for service"
+	}
 }
