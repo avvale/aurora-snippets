@@ -2,13 +2,17 @@
     "name": "aurora-ts-snippets",
     "publisher": "carlospalacin",
     "displayName": "Aurora snippets",
-    "description": "Snippets for aurora framework",
-    "version": "0.0.1",
+    "description": "Snippets for Aurora Codeless",
+    "version": "0.0.2",
     "icon": "images/icon.png",
     "repository": {
         "type": "git",
         "url": "https://github.com/techedge-group/aurora-snippets.git"
-      },
+    },
+    "keywords": [
+        "Codeless",
+        "Lowcode"
+    ],
     "engines": {
         "vscode": "^1.73.0"
     },
