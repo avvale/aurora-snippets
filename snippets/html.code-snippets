@@ -143,4 +143,26 @@
 		],
 		"description": "Create variables for grid elements manager"
 	},
+
+    // ${1:fieldCamelCaseSingular}
+    // ${2:fieldPascalCaseSingular}
+    // ${3:boundedContextCamelCaseSingular}
+    // ${4:6}
+    "Add material input text for Aurora": {
+		"prefix": "au-input-text",
+		"body": [
+            "<mat-form-field",
+            "\tappearance=\"outline\"",
+            "\tclass=\"col-${4:6}\"",
+            ">",
+            "\t<mat-label>{{ t('${3:boundedContextCamelCaseSingular}.${2:fieldPascalCaseSingular}') }}</mat-label>",
+            "\t<input",
+            "\t\tmatInput",
+            "\t\tformControlName=\"${1:fieldCamelCaseSingular}\"",
+            "\t>",
+            "\t<mat-error>{{ formErrors?.${1:fieldCamelCaseSingular} | async }}</mat-error>",
+            "</mat-form-field>",
+        ],
+		"description": "Add material input text for Aurora"
+	},
 }
