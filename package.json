@@ -2,7 +2,7 @@
     "name": "aurora-ts-snippets",
     "publisher": "carlospalacin",
     "displayName": "Aurora snippets",
-    "description": "Snippets for Aurora Codeless",
+    "description": "Snippets for Aurora Codeless Framework",
     "version": "0.0.2",
     "icon": "images/icon.png",
     "repository": {
