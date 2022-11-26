@@ -3,7 +3,7 @@
     "publisher": "carlospalacin",
     "displayName": "Aurora snippets",
     "description": "Snippets for Aurora Codeless Framework",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "icon": "images/icon.png",
     "repository": {
         "type": "git",
