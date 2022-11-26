@@ -107,7 +107,7 @@
 		"prefix": "au-grid-elements-manager-actions",
 		"body": [
             "/* #region actions to manage ${1:objectCamelCasePlural} */",
-            "case '${5:boundedContextCamelCaseSingular}::truck.detail.${1:objectCamelCasePlural}Pagination':",
+            "case '${5:boundedContextCamelCaseSingular}::${7:moduleCamelCaseSingular}.detail.${1:objectCamelCasePlural}Pagination':",
             "\tawait lastValueFrom(",
             "\t\tthis.${2:objectCamelCaseSingular}Service",
             "\t\t\t.pagination({",
@@ -185,7 +185,7 @@
             "case '${5:boundedContextCamelCaseSingular}::${7:moduleCamelCaseSingular}.detail.delete${4:objectPascalCaseSingular}':",
             "\tconst delete${4:objectPascalCaseSingular}DialogRef = this.confirmationService.open({",
             "\t\ttitle  : `${this.translocoService.translate('Delete')} ${this.translocoService.translate('${5:boundedContextCamelCaseSingular}.${4:objectPascalCaseSingular}')}`,",
-            "\t\tmessage: this.translocoService.translate('DeletionWarning', { entity: this.translocoService.translate('orion.${4:objectPascalCaseSingular}') }),",
+            "\t\tmessage: this.translocoService.translate('DeletionWarning', { entity: this.translocoService.translate('${5:boundedContextCamelCaseSingular}.${4:objectPascalCaseSingular}') }),",
             "\t\ticon   : {",
             "\t\t\tshow : true,",
             "\t\t\tname : 'heroicons_outline:exclamation',",
@@ -225,7 +225,7 @@
             "\t\t\t\t\t);",
             "",
             "\t\t\t\t\tthis.actionService.action({",
-            "\t\t\t\t\t\tid          : 'orion::truck.detail.truckDepotsPagination',",
+            "\t\t\t\t\t\tid          : '${5:boundedContextCamelCaseSingular}::${7:moduleCamelCaseSingular}.detail.${1:objectCamelCasePlural}Pagination',",
             "\t\t\t\t\t\tisViewAction: false,",
             "\t\t\t\t\t});",
             "\t\t\t\t}",
@@ -264,5 +264,5 @@
             "/* #endregion actions to manage ${1:objectCamelCasePlural} */",
 		],
 		"description": "Create variables for grid elements manager"
-	}
+	},
 }
