@@ -46,7 +46,7 @@
             "/* #endregion variables to manage grid-elements-manager ${1:objectCamelCasePlural} */",
             "$7"
 		],
-		"description": "Create variables for grid elements manager"
+		"description": "Add variables for grid elements manager"
 	},
 
     // ${1:objectCamelCasePlural}
@@ -93,7 +93,7 @@
             "}",
             "/* #endregion methods to manage ${1:objectCamelCasePlural} */",
 		],
-		"description": "Create variables for grid elements manager"
+		"description": "Add variables for grid elements manager"
 	},
 
     // ${1:objectCamelCasePlural}
@@ -263,7 +263,7 @@
             "\tbreak;",
             "/* #endregion actions to manage ${1:objectCamelCasePlural} */",
 		],
-		"description": "Create variables for grid elements manager"
+		"description": "Add variables for grid elements manager"
 	},
 
     // ${1:objectCamelCaseSingular}
@@ -273,7 +273,7 @@
     // ${5:boundedContextPascalCaseSingular}
     // ${6:moduleCamelCaseSingular}
     // ${7:modulePascalCaseSingular}
-    "Add grid elements manager service": {
+    "Add findByIdWithRelations service method": {
 		"prefix": "au-find-by-id-with-relations-service-method",
 		"body": [
             "findByIdWithRelations(",
@@ -321,6 +321,41 @@
             "\t\t);",
             "}",
 		],
-		"description": "Create findByIdWithRelations method for service"
-	}
+		"description": "Add findByIdWithRelations method for service"
+	},
+
+    // ${1:objectPascalCasePlural}
+    // ${2:boundedContextCamelCaseSingular}
+    // ${3:boundedContextPascalCaseSingular}
+    "Add findByIdWithRelationsQuery graphql": {
+		"prefix": "au-find-by-id-with-relations-query-graphql",
+		"body": [
+            "export const findByIdWithRelationsQuery = gql`",
+            "\tquery ${3:boundedContextPascalCaseSingular}FindTruckById (",
+            "\t\t$id: ID",
+            "\t\t$constraint: QueryStatement",
+            "\t\t$queryPaginate${1:objectPascalCasePlural}: QueryStatement",
+            "\t\t$constraintPaginate${1:objectPascalCasePlural}: QueryStatement",
+            "\t) {",
+            "\t\tobject: ${2:boundedContextCamelCaseSingular}FindTruckById (",
+            "\t\t\tid: $id",
+            "\t\t\tconstraint: $constraint",
+            "\t\t) {",
+            "\t\t\tid",
+            "\t\t\t#FIELDS",
+            "\t\t}",
+            "\t\t${2:boundedContextCamelCaseSingular}Paginate${1:objectPascalCasePlural} (",
+            "\t\t\tquery: $queryPaginate${1:objectPascalCasePlural}",
+            "\t\t\tconstraint: $constraintPaginate${1:objectPascalCasePlural}",
+            "\t\t) {",
+            "\t\t\ttotal",
+            "\t\t\trows",
+            "\t\t\tcount",
+            "\t\t}",
+            "\t\t${relationsFields}",
+            "\t}",
+            "`;",
+		],
+		"description": "Add findByIdWithRelationsQuery for grid elements manager"
+	},
 }
