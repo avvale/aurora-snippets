@@ -274,7 +274,7 @@
     // ${6:moduleCamelCaseSingular}
     // ${7:modulePascalCaseSingular}
     "Add findByIdWithRelations service method": {
-		"prefix": "au-find-by-id-with-relations-service-method",
+		"prefix": "au-findByIdWithRelations-service",
 		"body": [
             "findByIdWithRelations(",
             "\t{",
@@ -327,17 +327,18 @@
     // ${1:objectPascalCasePlural}
     // ${2:boundedContextCamelCaseSingular}
     // ${3:boundedContextPascalCaseSingular}
+    // ${4:modulePascalCaseSingular}
     "Add findByIdWithRelationsQuery graphql": {
-		"prefix": "au-find-by-id-with-relations-query-graphql",
+		"prefix": "au-findByIdWithRelationsQuery-graphql",
 		"body": [
             "export const findByIdWithRelationsQuery = gql`",
-            "\tquery ${3:boundedContextPascalCaseSingular}FindTruckById (",
+            "\tquery ${3:boundedContextPascalCaseSingular}Find${4:modulePascalCaseSingular}ById (",
             "\t\t$id: ID",
             "\t\t$constraint: QueryStatement",
             "\t\t$queryPaginate${1:objectPascalCasePlural}: QueryStatement",
             "\t\t$constraintPaginate${1:objectPascalCasePlural}: QueryStatement",
             "\t) {",
-            "\t\tobject: ${2:boundedContextCamelCaseSingular}FindTruckById (",
+            "\t\tobject: ${2:boundedContextCamelCaseSingular}Find${4:modulePascalCaseSingular}ById (",
             "\t\t\tid: $id",
             "\t\t\tconstraint: $constraint",
             "\t\t) {",
@@ -357,5 +358,38 @@
             "`;",
 		],
 		"description": "Add findByIdWithRelationsQuery for grid elements manager"
+	},
+
+
+    // ${1:objectCamelCaseSingular}
+    // ${2:objectPascalCasePlural}
+    // ${3:objectPascalCasePlural}
+    // ${4:boundedContextCamelCaseSingular}
+    // ${5:moduleCamelCaseSingular}
+    "Add findByIdWithRelations to edit resolver": {
+		"prefix": "au-findByIdWithRelations-resolver",
+		"body": [
+            "// ${1:objectCamelCaseSingular}",
+            "const ${2:objectPascalCasePlural}GridId = '${4:boundedContextCamelCaseSingular}::${5:moduleCamelCaseSingular}.detail.${2:objectPascalCasePlural}GridList';",
+            "this.gridStateService.setPaginationActionId(${2:objectPascalCasePlural}GridId, '${4:boundedContextCamelCaseSingular}::${5:moduleCamelCaseSingular}.detail.${2:objectPascalCasePlural}Pagination');",
+            "this.gridStateService.setExportActionId(${2:objectPascalCasePlural}GridId, '${4:boundedContextCamelCaseSingular}::${5:moduleCamelCaseSingular}.detail.export${3:objectPascalCasePlural}');",
+            "",
+            "return this.${5:moduleCamelCaseSingular}Service.findByIdWithRelations({",
+            "\tid                      : route.paramMap.get('id'),",
+            "\tqueryPaginate${3:objectPascalCasePlural}: QueryStatementHandler",
+            "\t\t.init({ columnsConfig: ${1:objectCamelCaseSingular}ColumnsConfig })",
+            "\t\t.setColumFilters(this.gridFiltersStorageService.getColumnFilterState(${2:objectPascalCasePlural}GridId))",
+            "\t\t.setSort(this.gridStateService.getSort(${2:objectPascalCasePlural}GridId))",
+            "\t\t.setPage(this.gridStateService.getPage(${2:objectPascalCasePlural}GridId))",
+            "\t\t.setSearch(this.gridStateService.getSearchState(${2:objectPascalCasePlural}GridId))",
+            "\t\t.getQueryStatement(),",
+            "\tconstraintPaginate${3:objectPascalCasePlural}: {",
+            "\t\twhere: {",
+            "\t\t\t${5:moduleCamelCaseSingular}Id: route.paramMap.get('id'),",
+            "\t\t},",
+            "\t},",
+            "});",
+		],
+		"description": "Add findByIdWithRelations for resolver"
 	},
 }

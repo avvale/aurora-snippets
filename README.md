@@ -15,8 +15,9 @@ Alternatively, press `Ctrl`+`Space` (Windows, Linux) or `Cmd`+`Space` (macOS) to
 | `au-grid-elements-manager-variables`          | Add variables for `GridElementsManagerComponent`        |
 | `au-grid-elements-manager-methods`            | Add methods for `GridElementsManagerComponent`          |
 | `au-grid-elements-manager-actions`            | Add actions for `GridElementsManagerComponent`          |
-| `au-find-by-id-with-relations-service-method` | Add method in service for `findByIdWithRelations`       |
-| `au-find-by-id-with-relations-query-graphql`  | Add actions in graphql for `findByIdWithRelationsQuery` |
+| `au-findByIdWithRelations-service`            | Add `findByIdWithRelations` method in service           |
+| `au-findByIdWithRelations-graphql`            | Add `findByIdWithRelationsQuery` method in graphql      |
+| `au-findByIdWithRelations-resolver`           | Add `findBbyIdWithRelations` method in edit resolver    |
 
 ### Html Aurora Snippets
 
