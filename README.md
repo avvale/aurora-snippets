@@ -10,11 +10,13 @@ Alternatively, press `Ctrl`+`Space` (Windows, Linux) or `Cmd`+`Space` (macOS) to
 
 ### TypeScript Aurora Snippets
 
-| Snippet                              | Purpose                                                              |
-| ------------------------------------ | -------------------------------------------------------------------- |
-| `au-grid-elements-manager-variables` | Add variables for `GridElementsManagerComponent`                     |
-| `au-grid-elements-manager-methods`   | Add methods for `GridElementsManagerComponent`                       |
-| `au-grid-elements-manager-actions`   | Add actions for `GridElementsManagerComponent`                       |
+| Snippet                                       | Purpose                                                 |
+| --------------------------------------------- | --------------------------------------------------------|
+| `au-grid-elements-manager-variables`          | Add variables for `GridElementsManagerComponent`        |
+| `au-grid-elements-manager-methods`            | Add methods for `GridElementsManagerComponent`          |
+| `au-grid-elements-manager-actions`            | Add actions for `GridElementsManagerComponent`          |
+| `au-find-by-id-with-relations-service-method` | Add method in service for `findByIdWithRelations`       |
+| `au-find-by-id-with-relations-query-graphql`  | Add actions in graphql for `findByIdWithRelationsQuery` |
 
 ### Html Aurora Snippets
 
