@@ -23,6 +23,7 @@ Alternatively, press `Ctrl`+`Space` (Windows, Linux) or `Cmd`+`Space` (macOS) to
 | Snippet                              | Purpose                                                              |
 | ------------------------------------ | -------------------------------------------------------------------- |
 | `au-grid-elements-manager-component` | Add component for `GridElementsManagerComponent`                     |
+| `au-input-text`                      | Add material input text component with validation                    |
 
 ## Installation
 
