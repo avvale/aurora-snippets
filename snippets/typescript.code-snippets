@@ -362,7 +362,7 @@
 
 
     // ${1:objectCamelCaseSingular}
-    // ${2:objectPascalCasePlural}
+    // ${2:objectCamelCasePlural}
     // ${3:objectPascalCasePlural}
     // ${4:boundedContextCamelCaseSingular}
     // ${5:moduleCamelCaseSingular}
@@ -370,18 +370,18 @@
 		"prefix": "au-findByIdWithRelations-resolver",
 		"body": [
             "// ${1:objectCamelCaseSingular}",
-            "const ${2:objectPascalCasePlural}GridId = '${4:boundedContextCamelCaseSingular}::${5:moduleCamelCaseSingular}.detail.${2:objectPascalCasePlural}GridList';",
-            "this.gridStateService.setPaginationActionId(${2:objectPascalCasePlural}GridId, '${4:boundedContextCamelCaseSingular}::${5:moduleCamelCaseSingular}.detail.${2:objectPascalCasePlural}Pagination');",
-            "this.gridStateService.setExportActionId(${2:objectPascalCasePlural}GridId, '${4:boundedContextCamelCaseSingular}::${5:moduleCamelCaseSingular}.detail.export${3:objectPascalCasePlural}');",
+            "const ${2:objectCamelCasePlural}GridId = '${4:boundedContextCamelCaseSingular}::${5:moduleCamelCaseSingular}.detail.${2:objectCamelCasePlural}GridList';",
+            "this.gridStateService.setPaginationActionId(${2:objectCamelCasePlural}GridId, '${4:boundedContextCamelCaseSingular}::${5:moduleCamelCaseSingular}.detail.${2:objectCamelCasePlural}Pagination');",
+            "this.gridStateService.setExportActionId(${2:objectCamelCasePlural}GridId, '${4:boundedContextCamelCaseSingular}::${5:moduleCamelCaseSingular}.detail.export${3:objectPascalCasePlural}');",
             "",
             "return this.${5:moduleCamelCaseSingular}Service.findByIdWithRelations({",
             "\tid                      : route.paramMap.get('id'),",
             "\tqueryPaginate${3:objectPascalCasePlural}: QueryStatementHandler",
             "\t\t.init({ columnsConfig: ${1:objectCamelCaseSingular}ColumnsConfig })",
-            "\t\t.setColumFilters(this.gridFiltersStorageService.getColumnFilterState(${2:objectPascalCasePlural}GridId))",
-            "\t\t.setSort(this.gridStateService.getSort(${2:objectPascalCasePlural}GridId))",
-            "\t\t.setPage(this.gridStateService.getPage(${2:objectPascalCasePlural}GridId))",
-            "\t\t.setSearch(this.gridStateService.getSearchState(${2:objectPascalCasePlural}GridId))",
+            "\t\t.setColumFilters(this.gridFiltersStorageService.getColumnFilterState(${2:objectCamelCasePlural}GridId))",
+            "\t\t.setSort(this.gridStateService.getSort(${2:objectCamelCasePlural}GridId))",
+            "\t\t.setPage(this.gridStateService.getPage(${2:objectCamelCasePlural}GridId))",
+            "\t\t.setSearch(this.gridStateService.getSearchState(${2:objectCamelCasePlural}GridId))",
             "\t\t.getQueryStatement(),",
             "\tconstraintPaginate${3:objectPascalCasePlural}: {",
             "\t\twhere: {",
