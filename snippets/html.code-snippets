@@ -102,6 +102,8 @@
             "\t\t[operator]=\"t('Operator')\"",
             "\t\t[OR]=\"t('OR')\"",
             "\t\t[pleaseSelectField]=\"t('PleaseSelectField')\"",
+            "\t\t[resetColumnsConfig]=\"t('ResetColumnsConfig')\"",
+            "\t\t[search]=\"t('Search')\"",
             "\t\t[translations]=\"t('Translations')\"",
             "\t\t[value]=\"t('Value')\"",
             "\t\t[noData]=\"t('NoData')\"",
