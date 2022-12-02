@@ -7,6 +7,7 @@
     // ${6:moduleCamelCaseSingular}
     "Add grid elements manager variables": {
 		"prefix": "au-grid-elements-manager-variables",
+        "description": "Add variables for grid elements manager",
 		"body": [
             "/* #region variables to manage grid-elements-manager ${1:objectCamelCasePlural} */",
 			"@ViewChild('${1:objectCamelCasePlural}GridElementsManager') ${1:objectCamelCasePlural}Component: GridElementsManagerComponent;",
@@ -46,7 +47,6 @@
             "/* #endregion variables to manage grid-elements-manager ${1:objectCamelCasePlural} */",
             "$7"
 		],
-		"description": "Add variables for grid elements manager"
 	},
 
     // ${1:objectCamelCasePlural}
@@ -57,6 +57,7 @@
     // ${6:moduleCamelCaseSingular}
     "Add grid elements manager methods": {
 		"prefix": "au-grid-elements-manager-methods",
+        "description": "Add variables for grid elements manager",
 		"body": [
             "/* #region methods to manage ${1:objectCamelCasePlural} */",
 			"create${3:objectPascalCasePlural}DialogForm(): void",
@@ -93,7 +94,6 @@
             "}",
             "/* #endregion methods to manage ${1:objectCamelCasePlural} */",
 		],
-		"description": "Add variables for grid elements manager"
 	},
 
     // ${1:objectCamelCasePlural}
@@ -105,6 +105,7 @@
     // ${7:moduleCamelCaseSingular}
     "Add grid elements manager actions": {
 		"prefix": "au-grid-elements-manager-actions",
+        "description": "Add actions for grid elements manager",
 		"body": [
             "/* #region actions to manage ${1:objectCamelCasePlural} */",
             "case '${5:boundedContextCamelCaseSingular}::${7:moduleCamelCaseSingular}.detail.${1:objectCamelCasePlural}Pagination':",
@@ -146,7 +147,7 @@
             "\t\t\t}),",
             "\t);",
             "\tthis.actionService.action({",
-            "\t\tid          : '${7:moduleCamelCaseSingular}::${7:moduleCamelCaseSingular}.detail.${1:objectCamelCasePlural}Pagination',",
+            "\t\tid          : '${5:boundedContextCamelCaseSingular}::${7:moduleCamelCaseSingular}.detail.${1:objectCamelCasePlural}Pagination',",
             "\t\tisViewAction: false,",
             "\t});",
             "\tbreak;",
@@ -194,22 +195,16 @@
             "\t\tactions: {",
             "\t\t\tconfirm: {",
             "\t\t\t\tshow : true,",
-            "\t\t\t\tlabel: this.translocoService.translate('Remove')",
+            "\t\t\t\tlabel: this.translocoService.translate('Remove'),",
             "\t\t\t\tcolor: 'warn',",
             "\t\t\t},",
-            "\t\t\tactions: {",
-            "\t\t\t\tconfirm: {",
-            "\t\t\t\t\tshow : true,",
-            "\t\t\t\t\tlabel: this.translocoService.translate('Remove'),",
-            "\t\t\t\t\tcolor: 'warn',",
-            "\t\t\t\t},",
-            "\t\t\t\tcancel: {",
-            "\t\t\t\t\tshow : true,",
-            "\t\t\t\t\tlabel: this.translocoService.translate('Cancel'),",
-            "\t\t\t\t},",
+            "\t\t\tcancel: {",
+            "\t\t\t\tshow : true,",
+            "\t\t\t\tlabel: this.translocoService.translate('Cancel'),",
             "\t\t\t},",
-            "\t\t\tdismissible: true,",
-            "\t\t});",
+            "\t\t},",
+            "\t\tdismissible: true,",
+            "\t});",
             "",
             "\tdelete${4:objectPascalCaseSingular}DialogRef",
             "\t\t.afterClosed()",
@@ -263,7 +258,6 @@
             "\tbreak;",
             "/* #endregion actions to manage ${1:objectCamelCasePlural} */",
 		],
-		"description": "Add variables for grid elements manager"
 	},
 
     // ${1:objectCamelCaseSingular}
@@ -275,6 +269,7 @@
     // ${7:modulePascalCaseSingular}
     "Add findByIdWithRelations service method": {
 		"prefix": "au-findByIdWithRelations-service",
+        "description": "Add findByIdWithRelations method for service",
 		"body": [
             "findByIdWithRelations(",
             "\t{",
@@ -321,7 +316,6 @@
             "\t\t);",
             "}",
 		],
-		"description": "Add findByIdWithRelations method for service"
 	},
 
     // ${1:objectPascalCasePlural}
@@ -330,6 +324,7 @@
     // ${4:modulePascalCaseSingular}
     "Add findByIdWithRelationsQuery graphql": {
 		"prefix": "au-findByIdWithRelationsQuery-graphql",
+        "description": "Add findByIdWithRelationsQuery for grid elements manager",
 		"body": [
             "export const findByIdWithRelationsQuery = gql`",
             "\tquery ${3:boundedContextPascalCaseSingular}Find${4:modulePascalCaseSingular}ById (",
@@ -357,7 +352,6 @@
             "\t}",
             "`;",
 		],
-		"description": "Add findByIdWithRelationsQuery for grid elements manager"
 	},
 
 
@@ -368,6 +362,7 @@
     // ${5:moduleCamelCaseSingular}
     "Add findByIdWithRelations to edit resolver": {
 		"prefix": "au-findByIdWithRelations-resolver",
+        "description": "Add findByIdWithRelations for resolver",
 		"body": [
             "// ${1:objectCamelCaseSingular}",
             "const ${2:objectCamelCasePlural}GridId = '${4:boundedContextCamelCaseSingular}::${5:moduleCamelCaseSingular}.detail.${2:objectCamelCasePlural}GridList';",
@@ -390,6 +385,5 @@
             "\t},",
             "});",
 		],
-		"description": "Add findByIdWithRelations for resolver"
 	},
 }
