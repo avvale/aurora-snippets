@@ -14,7 +14,7 @@
             "\t*ngIf=\"currentViewAction.id === '${7:moduleCamelCaseSingular}::${7:moduleCamelCaseSingular}.detail.edit'\"",
             "\tclass=\"col-12 mt-7\"",
             "\t[columnsConfig]=\"${1:objectCamelCasePlural}ColumnsConfig$ | async\"",
-            "\t[dialogTitle]=\"t(' ${5:boundedContextCamelCaseSingular}.${6:boundedContextPascalCaseSingular}')\"",
+            "\t[dialogTitle]=\"t(' ${5:boundedContextCamelCaseSingular}.${4:objectPascalCaseSingular}\"",
             "\t[gridData]=\"${1:objectCamelCasePlural}GridData$ | async\"",
             "\t[gridState]=\"${1:objectCamelCasePlural}GridState\"",
             "\t[id]=\"${1:objectCamelCasePlural}GridId\"",
