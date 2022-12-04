@@ -377,7 +377,7 @@
 
     // ${1:objectCamelCaseSingular}
     // ${2:objectCamelCasePlural}
-    "Add columns config, state and grid data form grid": {
+    "Add columns config, state and grid data form to init grid": {
         "prefix": "au-init-columns-config-state-data-grid",
         "description": "Add columns config, state and grid data form grid",
         "body": [
