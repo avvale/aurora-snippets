@@ -2,9 +2,10 @@
     // ${1:objectCamelCasePlural}
     // ${2:objectCamelCaseSingular}
     // ${3:objectPascalCaseSingular}
-    // ${4:boundedContextCamelCaseSingular}
-    // ${5:boundedContextPascalCaseSingular}
-    // ${6:moduleCamelCaseSingular}
+    // ${4:objectPascalCasePlural}
+    // ${5:boundedContextCamelCaseSingular}
+    // ${6:boundedContextPascalCaseSingular}
+    // ${7:moduleCamelCaseSingular}
     "Add grid elements manager variables": {
 		"prefix": "au-grid-elements-manager-variables",
         "description": "Add variables for grid elements manager",
@@ -12,11 +13,11 @@
             "/* #region variables to manage grid-elements-manager ${1:objectCamelCasePlural} */",
 			"@ViewChild('${1:objectCamelCasePlural}GridElementsManager') ${1:objectCamelCasePlural}Component: GridElementsManagerComponent;",
 			"${2:objectCamelCaseSingular}DialogFg: FormGroup;",
-            "${1}GridId: string = '${4:boundedContextCamelCaseSingular}::${6:moduleCamelCaseSingular}.detail.${1}GridList';",
-            "${1}GridData$: Observable<GridData<${5:boundedContextPascalCaseSingular}${3:objectPascalCaseSingular}>>;",
+            "${1}GridId: string = '${5:boundedContextCamelCaseSingular}::${7:moduleCamelCaseSingular}.detail.${1}GridList';",
+            "${1}GridData$: Observable<GridData<${6:boundedContextPascalCaseSingular}${3:objectPascalCaseSingular}>>;",
             "${1}GridState: GridState = {};",
             "${1}ColumnsConfig$: Observable<ColumnConfig[]>;",
-            "originLoadOrdersColumnsConfig: ColumnConfig[] = [",
+            "origin${4:objectPascalCasePlural}ColumnsConfig: ColumnConfig[] = [",
             "\t{",
             "\t\ttype   : ColumnDataType.ACTIONS,",
             "\t\tfield  : 'Actions',",
@@ -26,14 +27,14 @@
             "\t\t\tconst actions = [];",
             "",
             "\t\t\tactions.push({",
-            "\t\t\t\tid          : '${4:boundedContextCamelCaseSingular}::${6:moduleCamelCaseSingular}.detail.edit${3:objectPascalCaseSingular}',",
+            "\t\t\t\tid          : '${5:boundedContextCamelCaseSingular}::${7:moduleCamelCaseSingular}.detail.edit${3:objectPascalCaseSingular}',",
             "\t\t\t\tisViewAction: false,",
             "\t\t\t\ttranslation : 'edit',",
             "\t\t\t\ticon        : 'mode_edit',",
             "\t\t\t});",
             "",
             "\t\t\tactions.push({",
-            "\t\t\t\tid          : '${4:boundedContextCamelCaseSingular}::${6:moduleCamelCaseSingular}.detail.delete${3:objectPascalCaseSingular}',",
+            "\t\t\t\tid          : '${5:boundedContextCamelCaseSingular}::${7:moduleCamelCaseSingular}.detail.delete${3:objectPascalCaseSingular}',",
             "\t\t\t\tisViewAction: false,",
             "\t\t\t\ttranslation : 'delete',",
             "\t\t\t\ticon        : 'delete',",
@@ -328,10 +329,10 @@
 		"body": [
             "export const findByIdWithRelationsQuery = gql`",
             "\tquery ${3:boundedContextPascalCaseSingular}Find${4:modulePascalCaseSingular}ById (",
-            "\t\t$id: ID",
-            "\t\t$constraint: QueryStatement",
-            "\t\t$queryPaginate${1:objectPascalCasePlural}: QueryStatement",
-            "\t\t$constraintPaginate${1:objectPascalCasePlural}: QueryStatement",
+            "\t\t\\$id: ID",
+            "\t\t\\$constraint: QueryStatement",
+            "\t\t\\$queryPaginate${1:objectPascalCasePlural}: QueryStatement",
+            "\t\t\\$constraintPaginate${1:objectPascalCasePlural}: QueryStatement",
             "\t) {",
             "\t\tobject: ${2:boundedContextCamelCaseSingular}Find${4:modulePascalCaseSingular}ById (",
             "\t\t\tid: $id",
@@ -341,14 +342,14 @@
             "\t\t\t#FIELDS",
             "\t\t}",
             "\t\t${2:boundedContextCamelCaseSingular}Paginate${1:objectPascalCasePlural} (",
-            "\t\t\tquery: $queryPaginate${1:objectPascalCasePlural}",
-            "\t\t\tconstraint: $constraintPaginate${1:objectPascalCasePlural}",
+            "\t\t\tquery: \\$queryPaginate${1:objectPascalCasePlural}",
+            "\t\t\tconstraint: \\$constraintPaginate${1:objectPascalCasePlural}",
             "\t\t) {",
             "\t\t\ttotal",
             "\t\t\trows",
             "\t\t\tcount",
             "\t\t}",
-            "\t\t${relationsFields}",
+            "\t\t\\${relationsFields}",
             "\t}",
             "`;",
 		],
@@ -357,33 +358,55 @@
 
     // ${1:objectCamelCaseSingular}
     // ${2:objectCamelCasePlural}
-    // ${3:objectPascalCasePlural}
-    // ${4:boundedContextCamelCaseSingular}
-    // ${5:moduleCamelCaseSingular}
+    // ${3:boundedContextCamelCaseSingular}
+    // ${4:moduleCamelCaseSingular}
     "Add findByIdWithRelations to edit resolver": {
 		"prefix": "au-findByIdWithRelations-resolver",
-        "description": "Add findByIdWithRelations for resolver",
+        "description": "Add findByIdWithRelations for edit resolver",
 		"body": [
             "// ${1:objectCamelCaseSingular}",
-            "const ${2:objectCamelCasePlural}GridId = '${4:boundedContextCamelCaseSingular}::${5:moduleCamelCaseSingular}.detail.${2:objectCamelCasePlural}GridList';",
-            "this.gridStateService.setPaginationActionId(${2:objectCamelCasePlural}GridId, '${4:boundedContextCamelCaseSingular}::${5:moduleCamelCaseSingular}.detail.${2:objectCamelCasePlural}Pagination');",
-            "this.gridStateService.setExportActionId(${2:objectCamelCasePlural}GridId, '${4:boundedContextCamelCaseSingular}::${5:moduleCamelCaseSingular}.detail.export${3:objectPascalCasePlural}');",
+            "const ${2:objectCamelCasePlural}GridId = '${3:boundedContextCamelCaseSingular}::${4:moduleCamelCaseSingular}.detail.${2:objectCamelCasePlural}GridList';",
+            "this.gridStateService.setPaginationActionId(${2:objectCamelCasePlural}GridId, '${3:boundedContextCamelCaseSingular}::${4:moduleCamelCaseSingular}.detail.${2:objectCamelCasePlural}Pagination');",
+            "this.gridStateService.setExportActionId(${2:objectCamelCasePlural}GridId, '${3:boundedContextCamelCaseSingular}::${4:moduleCamelCaseSingular}.detail.export${3:objectPascalCasePlural}');",
             "",
-            "return this.${5:moduleCamelCaseSingular}Service.findByIdWithRelations({",
+            "return this.${4:moduleCamelCaseSingular}Service.findByIdWithRelations({",
             "\tid                      : route.paramMap.get('id'),",
-            "\tqueryPaginate${3:objectPascalCasePlural}: QueryStatementHandler",
+            "\tqueryPaginate${2/(.*)/${1:/capitalize}/}: QueryStatementHandler",
             "\t\t.init({ columnsConfig: ${1:objectCamelCaseSingular}ColumnsConfig })",
             "\t\t.setColumFilters(this.gridFiltersStorageService.getColumnFilterState(${2:objectCamelCasePlural}GridId))",
             "\t\t.setSort(this.gridStateService.getSort(${2:objectCamelCasePlural}GridId))",
             "\t\t.setPage(this.gridStateService.getPage(${2:objectCamelCasePlural}GridId))",
             "\t\t.setSearch(this.gridStateService.getSearchState(${2:objectCamelCasePlural}GridId))",
             "\t\t.getQueryStatement(),",
-            "\tconstraintPaginate${3:objectPascalCasePlural}: {",
+            "\tconstraintPaginate${2/(.*)/${1:/capitalize}/}: {",
             "\t\twhere: {",
-            "\t\t\t${5:moduleCamelCaseSingular}Id: route.paramMap.get('id'),",
+            "\t\t\t${4:moduleCamelCaseSingular}Id: route.paramMap.get('id'),",
             "\t\t},",
             "\t},",
             "});",
 		],
 	},
+
+    // ${1:objectCamelCaseSingular}
+    // ${2:objectCamelCasePlural}
+    "Add columns config, state and grid data form grid": {
+        "prefix": "au-init-columns-config-state-data-grid",
+        "description": "Add columns config, state and grid data form grid",
+        "body": [
+            "// ${2:objectCamelCasePlural} grid",
+            "// to delete: *${1:objectCamelCaseSingular}*",
+            "this.${2:objectCamelCasePlural}ColumnsConfig$ = this.gridColumnsConfigStorageService",
+            "\t.getColumnsConfig(this.${2:objectCamelCasePlural}GridId, this.origin${1/(.*)/${1:/capitalize}/}ColumnsConfig)",
+            "\t.pipe(takeUntil(this.unsubscribeAll$));",
+            "",
+            "this.${2:objectCamelCasePlural}GridState = {",
+            "\tcolumnFilters: this.gridFiltersStorageService.getColumnFilterState(this.${2:objectCamelCasePlural}GridId),",
+            "\tpage         : this.gridStateService.getPage(this.${2:objectCamelCasePlural}GridId),",
+            "\tsort         : this.gridStateService.getSort(this.${2:objectCamelCasePlural}GridId),",
+            "\tsearch       : this.gridStateService.getSearchState(this.${2:objectCamelCasePlural}GridId),",
+            "};",
+            "",
+            "this.${2:objectCamelCasePlural}GridData$ = this.satellite${2/(.*)/${1:/capitalize}/}Service.pagination$;",
+        ],
+    },
 }
