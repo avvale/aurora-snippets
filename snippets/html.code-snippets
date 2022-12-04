@@ -1,26 +1,23 @@
 {
-    // ${1:objectCamelCasePlural}
-    // ${2:objectCamelCaseSingular}
-    // ${3:objectPascalCasePlural}
-    // ${4:objectPascalCaseSingular}
-    // ${5:boundedContextCamelCaseSingular}
-    // ${6:boundedContextPascalCaseSingular}
-    // ${7:moduleCamelCaseSingular}
+    // ${1:objectCamelCaseSingular}
+    // ${2:objectCamelCasePlural}
+    // ${2:boundedContextCamelCaseSingular}
+    // ${4:moduleCamelCaseSingular}
 	"Add grid elements manager component": {
 		"prefix": "au-grid-elements-manager-component",
 		"body": [
-            "<!-- #region actions to manage ${1:objectCamelCasePlural} -->",
+            "<!-- #region actions to manage ${2:objectCamelCasePlural} -->",
             "<au-grid-elements-manager",
-            "\t*ngIf=\"currentViewAction.id ===  ${5:boundedContextCamelCaseSingular}::${7:moduleCamelCaseSingular}.detail.edit'\"",
+            "\t*ngIf=\"currentViewAction.id ===  ${2:boundedContextCamelCaseSingular}::${4:moduleCamelCaseSingular}.detail.edit'\"",
             "\tclass=\"col-12 mt-7\"",
-            "\t[columnsConfig]=\"${1:objectCamelCasePlural}ColumnsConfig$ | async\"",
-            "\t[dialogTitle]=\"t(' ${5:boundedContextCamelCaseSingular}.${4:objectPascalCaseSingular}\"",
-            "\t[gridData]=\"${1:objectCamelCasePlural}GridData$ | async\"",
-            "\t[gridState]=\"${1:objectCamelCasePlural}GridState\"",
-            "\t[id]=\"${1:objectCamelCasePlural}GridId\"",
-            "\t[label]=\"t('${5:boundedContextCamelCaseSingular}.${3:objectPascalCasePlural}')\"",
-            "\t[originColumnsConfig]=\"origin${3:objectPascalCasePlural}ColumnsConfig\"",
-            "\t#${1:objectCamelCasePlural}GridElementsManager",
+            "\t[columnsConfig]=\"${2:objectCamelCasePlural}ColumnsConfig$ | async\"",
+            "\t[dialogTitle]=\"t(' ${2:boundedContextCamelCaseSingular}.${1/(.*)/${1:/capitalize}/}\"",
+            "\t[gridData]=\"${2:objectCamelCasePlural}GridData$ | async\"",
+            "\t[gridState]=\"${2:objectCamelCasePlural}GridState\"",
+            "\t[id]=\"${2:objectCamelCasePlural}GridId\"",
+            "\t[label]=\"t('${2:boundedContextCamelCaseSingular}.${2/(.*)/${1:/capitalize}/}')\"",
+            "\t[originColumnsConfig]=\"origin${2/(.*)/${1:/capitalize}/}ColumnsConfig\"",
+            "\t#${2:objectCamelCasePlural}GridElementsManager",
             ">",
             "\t<ng-template",
             "\t\tauGridCustomButtonsHeaderDialogTemplate",
@@ -31,7 +28,7 @@
             "\t\t\ttype=\"button\"",
             "\t\t\t(click)=\"",
             "\t\t\t\tactionService.action({",
-            "\t\t\t\t\tid          : '${5:boundedContextCamelCaseSingular}::${7:moduleCamelCaseSingular}.detail.new${4:objectPascalCaseSingular}',",
+            "\t\t\t\t\tid          : '${2:boundedContextCamelCaseSingular}::${4:moduleCamelCaseSingular}.detail.new${1/(.*)/${1:/capitalize}/}',",
             "\t\t\t\t\tisViewAction: false",
             "\t\t\t\t})",
             "\t\t\t\"",
@@ -49,8 +46,8 @@
             "\t\t<form",
             "\t\t\tid=\"truckDepotDetailDialogForm\"",
             "\t\t\tnovalidate",
-            "\t\t\t[formGroup]=\"${2:objectCamelCaseSingular}DialogFg\"",
-            "\t\t\t(ngSubmit)=\"handleSubmit${4:objectPascalCaseSingular}Form($event, dialog)\"",
+            "\t\t\t[formGroup]=\"${1:objectCamelCaseSingular}DialogFg\"",
+            "\t\t\t(ngSubmit)=\"handleSubmit${1/(.*)/${1:/capitalize}/}Form($event, dialog)\"",
             "\t\t>",
             "\t\t\t<div class=\"layout__container\">",
             "\t\t\t\t<!-- define here the form of the entity to be managed -->",
@@ -98,7 +95,7 @@
             "\t\t[columns]=\"t('Columns')\"",
             "\t\t[field]=\"t('Field')\"",
             "\t\t[filter]=\"t('Filter')\"",
-            "\t\t[for]=\"${1:objectCamelCasePlural}GridId\"",
+            "\t\t[for]=\"${2:objectCamelCasePlural}GridId\"",
             "\t\t[operator]=\"t('Operator')\"",
             "\t\t[OR]=\"t('OR')\"",
             "\t\t[pleaseSelectField]=\"t('PleaseSelectField')\"",
@@ -133,7 +130,7 @@
             "\t\t}\"",
             "\t>",
             "\t\t<au-grid-column-translation",
-            "\t\t\t*ngFor=\"let columnConfig of origin${3:objectPascalCasePlural}ColumnsConfig\"",
+            "\t\t\t*ngFor=\"let columnConfig of origin${2/(.*)/${1:/capitalize}/}ColumnsConfig\"",
             "\t\t\t[field]=\"columnConfig.field\"",
             "\t\t>",
             "\t\t\t{{ t(columnConfig.translation ? columnConfig.translation : columnConfig.field.toPascalCase()) }}",
@@ -141,23 +138,22 @@
             "\t</au-grid-translations>",
             "",
             "</au-grid-elements-manager>",
-            "<!-- #endregion actions to manage ${1:objectCamelCasePlural} -->",
+            "<!-- #endregion actions to manage ${2:objectCamelCasePlural} -->",
 		],
 		"description": "Create variables for grid elements manager"
 	},
 
     // ${1:fieldCamelCaseSingular}
-    // ${2:fieldPascalCaseSingular}
-    // ${3:boundedContextCamelCaseSingular}
-    // ${4:6}
+    // ${2:boundedContextCamelCaseSingular}
+    // ${3:6}
     "Add material input text for Aurora": {
 		"prefix": "au-input-text",
 		"body": [
             "<mat-form-field",
             "\tappearance=\"outline\"",
-            "\tclass=\"col-${4:6}\"",
+            "\tclass=\"col-${3:6}\"",
             ">",
-            "\t<mat-label>{{ t('${3:boundedContextCamelCaseSingular}.${2:fieldPascalCaseSingular}') }}</mat-label>",
+            "\t<mat-label>{{ t('${2:boundedContextCamelCaseSingular}.${1/(.*)/${1:/capitalize}/}') }}</mat-label>",
             "\t<input",
             "\t\tmatInput",
             "\t\tformControlName=\"${1:fieldCamelCaseSingular}\"",
@@ -169,17 +165,16 @@
 	},
 
     // ${1:fieldCamelCaseSingular}
-    // ${2:fieldPascalCaseSingular}
-    // ${3:boundedContextCamelCaseSingular}
-    // ${4:3}
+    // ${2:boundedContextCamelCaseSingular}
+    // ${3:3}
     "Add material datepicker for Aurora": {
 		"prefix": "au-input-datepicker",
 		"body": [
             "<mat-form-field",
             "\tappearance=\"outline\"",
-            "\tclass=\"col-${4:3}\"",
+            "\tclass=\"col-${3:3}\"",
             ">",
-            "\t<mat-label>{{ t('${3:boundedContextCamelCaseSingular}.${2:fieldPascalCaseSingular}') }}</mat-label>",
+            "\t<mat-label>{{ t('${2:boundedContextCamelCaseSingular}.${1/(.*)/${1:/capitalize}/}') }}</mat-label>",
             "\t<input",
             "\t\tmatInput",
             "\t\tformControlName=\"${1:fieldCamelCaseSingular}\"",
