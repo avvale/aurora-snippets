@@ -172,7 +172,7 @@
 		"body": [
             "<mat-form-field",
             "\tappearance=\"outline\"",
-            "\tclass=\"col-${3:3}\"",
+            "\tclass=\"au-datepicker col-${3:3}\"",
             ">",
             "\t<mat-label>{{ t('${2:boundedContextCamelCaseSingular}.${1/(.*)/${1:/capitalize}/}') }}</mat-label>",
             "\t<input",
@@ -185,6 +185,7 @@
             "\t\tmatSuffix",
             "\t\t[for]=\"${1:fieldCamelCaseSingular}Picker\"",
             "\t>",
+            "\t</mat-datepicker-toggle>",
             "\t<mat-datepicker #${1:fieldCamelCaseSingular}Picker>",
             "\t</mat-datepicker>",
             "\t<mat-error>{{ formErrors?.${1:fieldCamelCaseSingular} | async }}</mat-error>",
