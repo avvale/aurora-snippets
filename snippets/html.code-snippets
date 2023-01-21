@@ -193,4 +193,43 @@
         ],
 		"description": "Add material input datepicker for Aurora"
 	},
+
+    // ${1:fieldCamelCaseSingular}
+    // ${2:boundedContextCamelCaseSingular}
+    // ${3:3}
+    "Add material datetimepicker for Aurora": {
+		"prefix": "au-input-datetimepicker",
+		"body": [
+            "<mat-form-field",
+            "\tappearance=\"outline\"",
+            "\tclass=\"au-datepicker col-${3:3}\"",
+            ">",
+            "\t<mat-label>{{ t('${2:boundedContextCamelCaseSingular}.${1/(.*)/${1:/capitalize}/}') }}</mat-label>",
+            "\t<input",
+            "\t\tmatInput",
+            "\t\tformControlName=\"${1:fieldCamelCaseSingular}\"",
+            "\t\t[auDatetimepickerSqlFormat]",
+            "\t\t[mtxDatetimepicker]=\"${1:fieldCamelCaseSingular}Picker\"",
+            "\t>",
+            "\t<mtx-datetimepicker-toggle",
+            "\t\tmatSuffix",
+            "\t\t[for]=\"${1:fieldCamelCaseSingular}Picker\"",
+            "\t>",
+            "\t</mtx-datetimepicker-toggle>",
+            "\t<mtx-datetimepicker",
+            "\t\t#${1:fieldCamelCaseSingular}Picker",
+            "\t\ttype=\"datetime\"",
+            "\t\tmode=\"landscape\"",
+            "\t\tstartView=\"month\"",
+            "\t\t[multiYearSelector]=\"false\"",
+            "\t\t[twelvehour]=\"false\"",
+            "\t\t[timeInterval]=\"1\"",
+            "\t\t[touchUi]=\"false\"",
+            "\t>",
+            "\t</mtx-datetimepicker>",
+            "\t<mat-error>{{ formErrors?.${1:fieldCamelCaseSingular} | async }}</mat-error>",
+            "</mat-form-field>",
+        ],
+		"description": "Add material input datetimepicker for Aurora"
+	},
 }

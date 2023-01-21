@@ -26,6 +26,7 @@ Alternatively, press `Ctrl`+`Space` (Windows, Linux) or `Cmd`+`Space` (macOS) to
 | `au-grid-elements-manager-component` | Add component for `GridElementsManagerComponent`                     |
 | `au-input-text`                      | Add material input text component with message error                 |
 | `au-input-datepicker`                | Add material input datepicker component with message error           |
+| `au-input-datetimepicker`            | Add material input datetimepicker component with message error       |
 
 ## Installation
 
